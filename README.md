@@ -1,9 +1,8 @@
-
 Breve descrição do grupo
 
-* Turno: [L]XX
-* Grupo: YY
+* Turno: [L]05
+* Grupo: 04
 * Alunos:
-    - Aluno1 upZZZZZ 
-    - Aluno2 upZZZZZ
-    - Aluno3 upZZZZZ
+    - Pedro Fonseca up202108653 
+    - Maria Laranjeira up202004453
+    - Guilherme Koch up202108760
