@@ -14,7 +14,7 @@ Tarefas:
 Após o envio de confirmação de conta, o usuário recebe um URL no seu e-mail ao qual, acedendo, é gerado uma sessão autenticada nessa mesma conta. De acordo com o código-fonte do plugin, este URL de confirmação é codificado de de acordo com o id da conta e o tempo no qual o pedido foi realizado. Desta maneira, assumindo que realizei o pedido de confirmação no segundo "1696622768", o link seria construído da segunte forma:
 
  - É realizada a conversão do Timestamp para MD5 Hash. O valor "1696622768" é codificado para "6b8214322afb07366f3ef2a75ab4e70d".
- - A contrução de um JSON é realizada, encodado com os pares "key"_"value" seguintes: "id"_"1" e "code"_"6b8214322afb07366f3ef2a75ab4e70d".
+ - A contrução de um JSON é realizada, encodado com os pares "key"\_"value" seguintes: "id"\_"1" e "code"_"6b8214322afb07366f3ef2a75ab4e70d".
  - De seguida, a conversão do mesmo JSON body para base64 é realizada: "ewoiaWQiOiAxLAoiY29kZSI6ICI2YjgyMTQzMjJhZmIwNzM2NmYzZWYyYTc1YWI0ZTcwZCIKfQ=="
  - Por ultimo, este payload é usado como valor do URL "wcj_verify_email" e, se o tempo de realização de pedido estiver correto, uma sessão autenticada na conta de id=1 é iniciada.
  - Desta forma, foi utilizado o seguinte URL: "http://ctf-fsi.fe.up.pt:5001/?wcj_verify_email=ewoiaWQiOiAxLAoiY29kZSI6ICI2YjgyMTQzMjJhZmIwNzM2NmYzZWYyYTc1YWI0ZTcwZCIKfQ=="
