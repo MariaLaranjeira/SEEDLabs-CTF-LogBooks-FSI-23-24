@@ -1,4 +1,4 @@
-##Task 1
+## Task 1
 Primeiramente executaram-se todos os comandos indicados no guião de modo a dar setup ao nosso ambiente de ataque.
 Posteriormente, entrando-se na pasta do shellcode compilou-se o ficheiro de c gerando-se os dois executáveis correspondentes ao shellcode de 32 bits e ao shellcode de 64 bits com "make setuid". E xecutando qualquer um dos shellcodes, é aberta uma nova shell no terminal, a root shell. 
 
@@ -6,13 +6,13 @@ Posteriormente, entrando-se na pasta do shellcode compilou-se o ficheiro de c ge
 ![64bit](Docs/Task1- Running 64 bit shellcode.png)
 
 
-##Task 2
+## Task 2
 Setup do ataque. Executou-se o Makefile na pasta code criando-se todos os ficheiros necessários.
 
 ![settingup](Docs/Task2- Setting up attack by running Makefile.png)
 
 
-##Task 3
+## Task 3
 Correndo a stack L1 em debug e seguindo os passos do guião, foi possível registar os seguintes valores para o EBP e o endereço do buffer, respetivamente: 0xffffcaa8 e 0xffffca3c. Calculando a diferença entre estes dois valores obtemos, em decimal, 108.
 
 ![gettingvalues](Docs/Task3 getting buffer address and ebp value in debug.png)
@@ -29,7 +29,7 @@ Posteriormente correu-se o script exploit e o executável stack-L1, obtendo-se r
 ![rootaccess](Docs/Task3 Gaining root access.png)
 
 
-##Task 4
+## Task 4
 Usando agora o stack-L2, repetiram-se os primeiros passos da task 3. Correndo o executável stack-L2-dbg e colocando novamente um breakpoint na função bof, obtive-se o valor do endereço de buffer, 0xffffca00. 
 
 ![gettingbufferaddress](Docs/Task4-getting buffer address.png)
