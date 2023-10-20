@@ -1,6 +1,6 @@
 CTF Semana #4 (Linux Environment)
 
-No início deste CTF, foram lidas as intruções e anotadas as informações pertinentes. Tais informações seriam o objetivo do CTF, que se tratava da subverção de um script presente dentro do próprio servidor pensado ser seguro, a imporância da leitura do "admin_note.txt" uma vez conectado no servidor e claro, o comando necessário para conexão com o servidor, e a verificação de que na pasta onde entrariamos no servidor, estaria presente um script que era corrido com frequência pelo servidor.
+No início deste CTF, foram lidas as intruções e anotadas as informações pertinentes. Tais informações seriam o objetivo do CTF, que se tratava da subverção de um script presente dentro do próprio servidor pensado ser seguro, a imporância da leitura do "admin_note.txt" uma vez conectado no servidor, o comando necessário para conexão com o servidor, e a verificação de que na pasta onde entrariamos no servidor, estaria presente um script que era corrido com frequência pelo servidor.
 
 De seguida, uma vez conectado com o servidor, usámos o comando "cat admin_note.txt" para imprimir os conteúdos do ficheiro na consola. Segundo o que foi lido, concluímos que o usuário, cujas pasta estávamos a explorar, não tinha acesso à pasta "/tmp" presente na root do sistema. Após alguma navegação, verificamos que nós tinhamos acesso total a essa pasta.
 
