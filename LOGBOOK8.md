@@ -50,7 +50,7 @@ Analisando-se novamente o segmento em sql do ficheiro unsafe_home.php, concluiu-
 ```
 
 ![Task2.3-1](Docs/Task2.3-Attempt.png)
-(na imagem acima aparece nas sugestões a string "alice" com a primeira letra minúscula, mas no input utilizado utilizou-se o mencionado acima, com "Alice)
+(embora na imagem acima apareça nas sugestões a string "alice" com a primeira letra minúscula, o input utilizado foi o mencionado acima, com "Alice)
 
 
 O que levaria a que a query resultante fosse a seguinte:
@@ -96,7 +96,7 @@ Introduziu-se o nickname "Boby" de modo a preservar o seu nome e de seguida, ter
 
 
 ### 3.3
-De modo a alterar a password do boby, o racícinio é idêntico à tarefa 3.2, exceto que desta vez o campo mudado é Password e não salary. Contudo, após análise do código, conluiu-se que a password guardada não é a string propriamente dita, mas sim o resultado do seu hash em SHA1, tal como mencionado no guião. Desta forma, se a Alice quiser mudar a password do Boby, terá de inserir, não a password desejada mas o seu hash. Assim, para esta tarefa escolheu-se que a password a mudar seria "boby". Pesquisando por "SHA1" na internet encontrou-se um conversor simples e introduziu-se "boby", obtendo-se o seguinte hash:
+De modo a alterar a password do Boby, o racícinio é idêntico à tarefa 3.2, exceto que desta vez o campo mudado é Password e não salary. Contudo, após análise do código, conluiu-se que a password guardada não é a string propriamente dita, mas sim o resultado do seu hash em SHA1, tal como mencionado no guião. Desta forma, se a Alice quiser mudar a password do Boby, terá de inserir, não a password desejada mas o seu hash. Assim, para esta tarefa escolheu-se que a password a colocar seria "boby". Pesquisando por "SHA1" na internet encontrou-se um conversor simples e introduziu-se "boby", obtendo-se o seguinte hash:
 **8fc8dd2efccb29d7e65fd35c2e035c8c203e19a1**
 
 ![Task3.3-1](Docs/Task3.3-Hash.png)
