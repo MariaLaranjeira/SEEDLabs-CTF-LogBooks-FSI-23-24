@@ -14,6 +14,6 @@ Sabendo que o objetivo é conseguir obter acesso ao website enquanto administrad
 ```
 
 Posto isto, procedeu-se à construção da string maliciosa. Primeiramente escreveu-se *admin*, para a query poder encontrar o user. Posteriormente, inseriu-se uma plica (*admin'*), de modo a fechar a string possibilitando a escrita de código em sql. Para terminar, sabendo que através do ficheiro index.php foi possível concluir que a versão de sql utilizada foi SQLite e que, nesta versão, um comentário no código é iniciado com "--" , inseriu-se este segmento de modo a descartar todo o restante código remetente à password. Assim a string utilizada foi a seguinte:
-**admin'--**
+<code>admin'--</code>
 De modo a realizar o ataque inseriu-se esta string no campo de username e sabendo que a palavra passe é "required", inseriu-se uma string aleatória de modo a que esse campo não ficasse vazio (no caso, "a")
 Desta forma foi possível obter acesso ao website enquanto administrador e recolher a flag.
