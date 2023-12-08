@@ -168,3 +168,29 @@ Se o usuário optar por prosseguir apesar do aviso, o acesso a www.kebabs.com é
 ![Alt text](Docs/Lab11kebabsWarning.png)
 
 ![Alt text](Docs/Lab11kebabsHelloWorld.png)
+
+
+###Task 6
+
+Para esta tarefa, assumimos que a CA foi compremetida por um atacante, portanto o atacante pode gerar os seus certificados para o website malicioso. Para isto, usamos os comandos: 
+
+```
+openssl req -newkey rsa:2048 -sha256 -keyout kebabs.key -out kebabs.csr -subj "/CN=www.kebabs.com/O=Kebabs Inc./C=US" -passout pass:dees
+```
+```
+openssl ca -config openssl.cnf -policy policy_anything \
+-md sha256 -days 3650 \
+-in kebabs.csr -out kebabs.crt -batch \
+-cert ca.crt -keyfile ca.key
+```
+
+Depois disto, alteramos os ficheiros Dockfile e fsi74_apache_ssl para suportarem os novos certificados.
+
+Dockerfile: 
+![Dockerfile](Docs/Dockerfile.png)
+
+fsi74_apache_ssl:
+![apache_updated](Docs/apache_file_altered.png)
+
+Com isto, reconstruimos o container e iniciamos o serviço apache. Desta forma, entrando no website "https://www.kebabs.com", o Firefox não criou um aviso de de segurança, apesar de mostrar que não reconhece o certeficado. O website "https://fsi74.com" continua com um funcionamento normal.
+![kebabs trusted](Docs/Lab11KebabsTrusted.PNG)
