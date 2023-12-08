@@ -187,9 +187,11 @@ openssl ca -config openssl.cnf -policy policy_anything \
 Depois disto, alteramos os ficheiros Dockfile e fsi74_apache_ssl para suportarem os novos certificados.
 
 Dockerfile: 
+
 ![Dockerfile](Docs/Dockerfile.png)
 
 fsi74_apache_ssl:
+
 ![apache_updated](Docs/apache_file_altered.png)
 
 Com isto, reconstruimos o container e iniciamos o serviço apache. Desta forma, entrando no website "https://www.kebabs.com", o Firefox não criou um aviso de de segurança, apesar de mostrar que não reconhece o certeficado. O website "https://fsi74.com" continua com um funcionamento normal.
