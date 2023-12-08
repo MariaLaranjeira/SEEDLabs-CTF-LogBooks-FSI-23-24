@@ -17,7 +17,7 @@ sudo nano /etc/hosts
 10.9.0.80   www.fsi74.com
 ```
 
-![Alt text](Lab11DNS.png)
+![Alt text](Docs/Lab11DNS.png)
 
 ### Task 1
 
@@ -27,7 +27,7 @@ cp /usr/lib/ssl/openssl.cnf ./openssl.cnf
 ```
 Dentro deste ficheiro descomentar "unique_subject".
 
-![Alt text](Lab11unique_sub.png)
+![Alt text](Docs/Lab11unique_sub.png)
 
 Executamos os comandos a seguir para estabelecer o nosso ambiente:
 
@@ -64,19 +64,19 @@ openssl rsa -in ca.key -text -noout
 
 P1: Qual a parte do certificado indica que se trata de um *CA’s certificate*? (CA:TRUE)
 
-![Alt text](Lab11CAcert.png)
+![Alt text](Docs/Lab11CAcert.png)
 
 P2: Qual a parte do certificado indica que se trata de um *self-signed certificate*? (Subject Key Identifier = Authority Key Identifier)
 
-![Alt text](Lab11Selfcert.png)
+![Alt text](Docs/Lab11Selfcert.png)
 
 P3: No algoritmo RSA, temos a *public exponent* (e), a *private exponent* (d), a *modulus* (n) e dois *secret numbers* (p e q), de forma que n = pq. Por favor, identifique os valores desses elementos nos teus arquivos de certificado e chave.
 
-![Alt text](Lab11PrivatePublicExp.png)
+![Alt text](Docs/Lab11PrivatePublicExp.png)
 
-![Alt text](Lab11Mudulus.png)
+![Alt text](Docs/Lab11Mudulus.png)
 
-![Alt text](Lab11SecretNumbers.png)
+![Alt text](Docs/Lab11SecretNumbers.png)
 
 ### Task2
 
@@ -91,7 +91,7 @@ O comando irá gerar um par de chaves pública/privada e, em seguida, criar uma 
 openssl req -in server.csr -text -noout
 ```
 
-![Alt text](Lab11AltNames.png)
+![Alt text](Docs/Lab11AltNames.png)
 
 ### Task3
 
@@ -105,7 +105,7 @@ openssl ca -config openssl.cnf -policy policy_anything \
 -cert ca.crt -keyfile ca.key
 ```
 
-![Alt text](Lab11Servercrt.png)
+![Alt text](Docs/Lab11Servercrt.png)
 
 Por razões de segurança, a configuração padrão no openssl.cnf não permite que o comando openssl ca copie o campo de extensão da solicitação para o certificado final.
 
@@ -119,39 +119,39 @@ openssl x509 -in server.crt -text -noout
 
 e obtivemos:
 
-![Alt text](Lab11Altnamescrt.png)
+![Alt text](Docs/Lab11Altnamescrt.png)
 
 ### Task4
 
 Criamos uma pasta "Task4". Dentro colocamos um ficheiro "Dockerfile", o ficheiro "fsi74_apache_ssl.cnf", o "indext.html" e "index_red.html" e uma pasta "certs" com os cretificados "ca.crt", "server.crt" e "server.key".
 
-![Alt text](Lab11Folder.png)
+![Alt text](Docs/Lab11Folder.png)
 
 Dockerfile:
 
-![Alt text](Lab11Dockerfile.png)
+![Alt text](Docs/Lab11Dockerfile.png)
 
 fsi74_apache_ssl.cnf:
 
-![Alt text](Lab11Apache.png)
+![Alt text](Docs/Lab11Apache.png)
 
 docker-compose.yml:
 
-![Alt text](Lab11Compose.png)
+![Alt text](Docs/Lab11Compose.png)
 
 Na shell do container corremos "service apache atart" com a password "dees" e entramos em "https://www.fsi74.com. Deparamo-nos com este aviso:
 
-![Alt text](Lab11SecurityWarning.png)
+![Alt text](Docs/Lab11SecurityWarning.png)
 
 Isso ocorre porque o Firefox possui apenas certificados altamente seguros no seu banco de certificados, o que significa que um certificado *self-signed* é motivo para exibir um aviso.
 
 Para evitar o aviso podemos dizer ao browser para confiar no nosso certificado:
 
-![Alt text](Lab11AddCertificate.png)
+![Alt text](Docs/Lab11AddCertificate.png)
 
-![Alt text](Lab11Certificate.png)
+![Alt text](Docs/Lab11Certificate.png)
 
-![Alt text](Lab11fsi74HelloWorld.png)
+![Alt text](Docs/Lab11fsi74HelloWorld.png)
 
 ### Task 5
 
@@ -165,6 +165,6 @@ Apesar da *DNS route exploitation*, quando Alice tenta visitar www.kebabs.com, o
 
 Se o usuário optar por prosseguir apesar do aviso, o acesso a www.kebabs.com é concedido. No entanto, o aviso prévio serve como uma medida de precaução, notificando o usuário sobre o potencial risco associado à discrepância de certificado.
 
-![Alt text](Lab11kebabsWarning.png)
+![Alt text](Docs/Lab11kebabsWarning.png)
 
-![Alt text](Lab11kebabsHelloWorld.png)
+![Alt text](Docs/Lab11kebabsHelloWorld.png)
