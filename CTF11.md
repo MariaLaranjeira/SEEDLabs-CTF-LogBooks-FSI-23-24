@@ -2,7 +2,7 @@ Através da leitura do enunciado, retiraram-se as seguintes conclusões a utiliz
 - p = primo próximo de 2^512
 - q = primo próximo de 2^513
 - n = p*q
-- ed % (p-1)(q-1) = 1, o que resolvido em ordem a d, resulta em: d = pow(e, -1, ((p-1)*(q-1)))
+- <code>ed % (p-1)(q-1) = 1</code>, o que resolvido em ordem a d, resulta em: <code>d = pow(e, -1, ((p-1)*(q-1)))</code>
 
 De modo a encontrar p e q utilizou-se o algoritmo aconselhado no enunciado, o algoritmo de Miller-Rabin:
 
@@ -64,8 +64,8 @@ def search(n):
     return None, None
 ```
 
-Por fim, calculou-se d usando a fórmula já mencionada e descodificou-se o ciphertext usando a função dec já fornecida. Como o ciphertext é dado em base hexadecimal, utilizou-se unhexlify no ciphertext para ser decifrado. Deu-se print ao resultado da descodificação e obteve-se a flag.
+Por fim, calculou-se d usando a fórmula já mencionada e descodificou-se o ciphertext usando a função dec já fornecida. Como o ciphertext é dado em base hexadecimal, utilizou-se <code>unhexlify</code> no ciphertext para ser decifrado. Deu-se print ao resultado da descodificação e obteve-se a flag.
 
-NOTA: O código completo usado neste ataque pode ser encontrado na pasta Code.
+NOTA: O código completo usado neste ataque pode ser encontrado na pasta Code com o nome <code>challenge.py</code>.
 
 
