@@ -2,10 +2,10 @@
 
 Para esta tarefa foi necessário realizar uma "análise de frequência" num ficheiro encriptado por método de substiuição monoalfabética simplificada. Foi fornecido um script de python para obter os Top 20 de letras repetidas, de tuplos de 2 letras repetidas e de tuplos de 3 letras repetidas. Com esta análise foi possível inferir a cifra de algumas letras. A partir destas, usando palavras semi-cifradas, foi-se gradualmente desencriptando o resto do alfabeto. Finalmente, obteu-se a mensagem decifrada.
 
-![Top20_1](Docs/Task 1 Top20 Letters.png)
-![Top20_2](Docs/Task 1 Top20 2Letters.png)
-![Top20_3](Docs/Task 1 Top20 3Letters.png)
-![T1_Final](Docs/Task 1 PreVSPost Encription.png)
+![Top20_1](Docs/Task-1-Top20-Letters.png)
+![Top20_2](Docs/Task-1-Top20-2Letters.png)
+![Top20_3](Docs/Task-1-Top20-3Letters.png)
+![T1_Final](Docs/Task-1-PreVSPost-Encription.png)
 
 ## Task 2
 
